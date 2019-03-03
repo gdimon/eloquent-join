@@ -63,8 +63,8 @@ class EloquentJoinBuilder extends Builder
 
             $relatedAlias = $this->query->getAlias();
 
-            $ownerKey = $relatedAlias . '.' . $relation->getOwnerKeyName();
-            $relatedKey = $table . '.' . $relation->getForeignKeyName();
+            $ownerKey = $relatedAlias . '.' . $relation->getOwnerKey();
+            $relatedKey = $table . '.' . $relation->getForeignKey();
 
             $this->join($relatedTable . ' AS ' . $relatedAlias, $ownerKey, '=', $relatedKey, $type);
         }
